@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install basic programs
-sudo apt install vim zsh git curl wget make
+sudo apt install vim zsh git curl wget make shutter xclip
 
 # Use zsh
 sudo chsh
