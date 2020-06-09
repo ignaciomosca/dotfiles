@@ -19,4 +19,31 @@ curl -s "https://get.sdkman.io" | zsh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
 
 # Git config
+git config --global user.name "Ignacio Mosca"
+git config --global user.email "ignaciomosca@outlook.com"
 git config --global core.editor "vim"
+
+# Install Docker
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# Install JDK
+sdk install java
+sdk install maven
+sdk install sbt
+
+# Install Ammonite
+sudo sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/lihaoyi/Ammonite/releases/download/2.1.4/2.13-2.1.4) > /usr/local/bin/amm && chmod +x /usr/local/bin/amm' && amm
+
+# Install Haskell
+sudo apt install haskell-platform
