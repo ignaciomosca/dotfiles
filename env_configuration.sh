@@ -36,6 +36,14 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-compose -y
+
+
+# Kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
+sudo update-alternatives --config x-terminal-emulator
 
 # Install JDK
 sdk install java
@@ -47,3 +55,12 @@ sudo sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/lihaoyi/Ammo
 
 # Install Haskell
 sudo apt install haskell-platform
+
+# Install Erlang/Elixir
+wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+sudo apt-get update
+sudo apt-get install esl-erlang
+sudo apt-get install elixir
+
+
+
