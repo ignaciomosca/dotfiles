@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# Update
+sudo apt update -y
+
 # Install basic programs
-sudo apt install vim zsh git curl wget make shutter xclip
+sudo apt install -y vim zsh git curl wget make shutter xclip fonts-font-awesome xmonad libghc-xmonad-contrib-dev
 
 # Use zsh
 sudo chsh
@@ -45,13 +48,13 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
 sudo update-alternatives --config x-terminal-emulator
 
+# Install Scala
+curl -Lo cs https://git.io/coursier-cli-linux && chmod +x cs && ./cs setup
+
 # Install JDK
 sdk install java
 sdk install maven
 sdk install sbt
-
-# Install Ammonite
-sudo sh -c '(echo "#!/usr/bin/env sh" && curl -L https://github.com/lihaoyi/Ammonite/releases/download/2.1.4/2.13-2.1.4) > /usr/local/bin/amm && chmod +x /usr/local/bin/amm' && amm
 
 # Install Haskell
 sudo apt install haskell-platform
@@ -62,5 +65,7 @@ sudo apt-get update
 sudo apt-get install esl-erlang
 sudo apt-get install elixir
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 
