@@ -4,7 +4,10 @@
 sudo apt update -y
 
 # Install basic programs
-sudo apt install -y vim zsh git curl wget make shutter xclip fonts-font-awesome xmonad libghc-xmonad-contrib-dev
+sudo apt install -y vim zsh git curl wget make shutter xclip 
+
+# Install themes
+sudo apt install -y qt5-style-kvantum qt5-style-kvantum-themes
 
 # Use zsh
 sudo chsh
@@ -27,7 +30,7 @@ git config --global user.email "ignaciomosca@outlook.com"
 git config --global core.editor "vim"
 
 # Install Docker
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -38,9 +41,8 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo apt-get install docker-compose -y
-
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-compose 
 
 # Kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -57,13 +59,12 @@ sdk install maven
 sdk install sbt
 
 # Install Haskell
-sudo apt install haskell-platform
+sudo apt install -y haskell-platform
 
 # Install Erlang/Elixir
 wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
 sudo apt-get update
-sudo apt-get install esl-erlang
-sudo apt-get install elixir
+sudo apt-get install -y esl-erlang elixir
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
