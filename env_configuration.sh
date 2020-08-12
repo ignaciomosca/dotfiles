@@ -4,7 +4,7 @@
 sudo apt update -y
 
 # Install basic programs
-sudo apt install -y vim zsh git curl wget make shutter xclip 
+sudo apt install -y vim zsh git curl wget make xclip direnv gpg inotify-tools libreadline-dev libssl-dev automake autoconf
 
 # Install themes
 sudo apt install -y qt5-style-kvantum qt5-style-kvantum-themes
